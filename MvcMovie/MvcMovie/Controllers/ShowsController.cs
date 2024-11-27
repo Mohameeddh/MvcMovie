@@ -10,23 +10,23 @@ using MvcMovie.Models;
 
 namespace MvcMovie.Controllers
 {
-    public class BookingsController : Controller
+    public class ShowsController : Controller
     {
         private readonly MvcMovieContext _context;
 
-        public BookingsController(MvcMovieContext context)
+        public ShowsController(MvcMovieContext context)
         {
             _context = context;
         }
 
-        // GET: Bookings
+        // GET: Shows
         public async Task<IActionResult> Index()
         {
-            var mvcMovieContext = _context.Bookings.Include(b => b.Show);
+            var mvcMovieContext = _context.Shows.Include(s => s.Movie).Include(s => s.Salon);
             return View(await mvcMovieContext.ToListAsync());
         }
 
-        // GET: Bookings/Details/5
+        // GET: Shows/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,42 +34,45 @@ namespace MvcMovie.Controllers
                 return NotFound();
             }
 
-            var booking = await _context.Bookings
-                .Include(b => b.Show)
+            var show = await _context.Shows
+                .Include(s => s.Movie)
+                .Include(s => s.Salon)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (booking == null)
+            if (show == null)
             {
                 return NotFound();
             }
 
-            return View(booking);
+            return View(show);
         }
 
-        // GET: Bookings/Create
+        // GET: Shows/Create
         public IActionResult Create()
         {
-            ViewData["ShowId"] = new SelectList(_context.Shows, "Id", "Id");
+            ViewData["MovieId"] = new SelectList(_context.Movies, "Id", "Id");
+            ViewData["SalonId"] = new SelectList(_context.Salons, "Id", "Id");
             return View();
         }
 
-        // POST: Bookings/Create
+        // POST: Shows/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,SeatNr,BookingNr,VisitorName,VisitorEmail,ShowId")] Booking booking)
+        public async Task<IActionResult> Create([Bind("Id,DateAndTime,MovieId,SalonId")] Show show)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(booking);
+                _context.Add(show);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ShowId"] = new SelectList(_context.Shows, "Id", "Id", booking.ShowId);
-            return View(booking);
+            ViewData["MovieId"] = new SelectList(_context.Movies, "Id", "Id", show.MovieId);
+            ViewData["SalonId"] = new SelectList(_context.Salons, "Id", "Id", show.SalonId);
+            return View(show);
         }
 
-        // GET: Bookings/Edit/5
+        // GET: Shows/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,23 +80,24 @@ namespace MvcMovie.Controllers
                 return NotFound();
             }
 
-            var booking = await _context.Bookings.FindAsync(id);
-            if (booking == null)
+            var show = await _context.Shows.FindAsync(id);
+            if (show == null)
             {
                 return NotFound();
             }
-            ViewData["ShowId"] = new SelectList(_context.Shows, "Id", "Id", booking.ShowId);
-            return View(booking);
+            ViewData["MovieId"] = new SelectList(_context.Movies, "Id", "Id", show.MovieId);
+            ViewData["SalonId"] = new SelectList(_context.Salons, "Id", "Id", show.SalonId);
+            return View(show);
         }
 
-        // POST: Bookings/Edit/5
+        // POST: Shows/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,SeatNr,BookingNr,VisitorName,VisitorEmail,ShowId")] Booking booking)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,DateAndTime,MovieId,SalonId")] Show show)
         {
-            if (id != booking.Id)
+            if (id != show.Id)
             {
                 return NotFound();
             }
@@ -102,12 +106,12 @@ namespace MvcMovie.Controllers
             {
                 try
                 {
-                    _context.Update(booking);
+                    _context.Update(show);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!BookingExists(booking.Id))
+                    if (!ShowExists(show.Id))
                     {
                         return NotFound();
                     }
@@ -118,11 +122,12 @@ namespace MvcMovie.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ShowId"] = new SelectList(_context.Shows, "Id", "Id", booking.ShowId);
-            return View(booking);
+            ViewData["MovieId"] = new SelectList(_context.Movies, "Id", "Id", show.MovieId);
+            ViewData["SalonId"] = new SelectList(_context.Salons, "Id", "Id", show.SalonId);
+            return View(show);
         }
 
-        // GET: Bookings/Delete/5
+        // GET: Shows/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,35 +135,36 @@ namespace MvcMovie.Controllers
                 return NotFound();
             }
 
-            var booking = await _context.Bookings
-                .Include(b => b.Show)
+            var show = await _context.Shows
+                .Include(s => s.Movie)
+                .Include(s => s.Salon)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (booking == null)
+            if (show == null)
             {
                 return NotFound();
             }
 
-            return View(booking);
+            return View(show);
         }
 
-        // POST: Bookings/Delete/5
+        // POST: Shows/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var booking = await _context.Bookings.FindAsync(id);
-            if (booking != null)
+            var show = await _context.Shows.FindAsync(id);
+            if (show != null)
             {
-                _context.Bookings.Remove(booking);
+                _context.Shows.Remove(show);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool BookingExists(int id)
+        private bool ShowExists(int id)
         {
-            return _context.Bookings.Any(e => e.Id == id);
+            return _context.Shows.Any(e => e.Id == id);
         }
     }
 }

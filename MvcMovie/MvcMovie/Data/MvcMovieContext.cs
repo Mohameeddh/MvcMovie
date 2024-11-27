@@ -14,7 +14,9 @@ namespace MvcMovie.Data
         {
         }
 
-        public DbSet<MvcMovie.Models.Movie> Movie { get; set; } = default!;
-        public DbSet<MvcMovie.Models.Booking> Booking { get; set; } = default!;
+        public DbSet<MvcMovie.Models.Movie> Movies { get; set; } = default!;
+        public DbSet<MvcMovie.Models.Booking> Bookings { get; set; } = default!;
+        public DbSet<MvcMovie.Models.Show> Shows { get; set; } = default!;
+        public DbSet<MvcMovie.Models.Salon> Salons { get; set; } = default!;
     }
 }

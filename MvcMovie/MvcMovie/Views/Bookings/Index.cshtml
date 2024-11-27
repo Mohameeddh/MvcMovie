@@ -19,10 +19,13 @@
                 @Html.DisplayNameFor(model => model.BookingNr)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                @Html.DisplayNameFor(model => model.VisitorName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
+                @Html.DisplayNameFor(model => model.VisitorEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Show)
             </th>
             <th></th>
         </tr>
@@ -37,10 +40,13 @@
                 @Html.DisplayFor(modelItem => item.BookingNr)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.VisitorName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Email)
+                @Html.DisplayFor(modelItem => item.VisitorEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Show.Id)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
