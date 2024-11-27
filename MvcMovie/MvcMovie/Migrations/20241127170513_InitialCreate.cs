@@ -21,7 +21,8 @@ namespace MvcMovie.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Length = table.Column<TimeSpan>(type: "time", nullable: false),
                     Genre = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Rating = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

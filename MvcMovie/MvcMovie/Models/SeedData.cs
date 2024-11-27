@@ -26,6 +26,7 @@ public static class SeedData
                     Description = "En man på äventyr",
                     Genre = "Romantic Comedy",
                     Length = TimeSpan.FromMinutes(105),
+                    Rating = "R",
                     Price = 7.99M,
                 },
                 new Movie
@@ -34,6 +35,7 @@ public static class SeedData
                     Description = "En man som cyklar genom livet",
                     Length = TimeSpan.FromMinutes(69),
                     Genre = "Comedy",
+                    Rating = "R",
                     Price = 8.99M
                 },
                 new Movie
@@ -42,6 +44,7 @@ public static class SeedData
                     Description = "Många spöken",
                     Length = TimeSpan.FromMinutes(209),
                     Genre = "Comedy",
+                    Rating = "R",
                     Price = 9.99M
                 },
                 new Movie
@@ -50,6 +53,7 @@ public static class SeedData
                     Description = "En man som älskar kärleken",
                     Length = TimeSpan.FromMinutes(155),
                     Genre = "Western",
+                    Rating = "R",
                     Price = 3.99M
                 }
             );
