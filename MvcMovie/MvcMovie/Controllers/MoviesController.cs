@@ -19,6 +19,11 @@ namespace MvcMovie.Controllers
             _context = context;
         }
 
+        public IActionResult Booking()
+        {
+            return View();
+        }
+
         // GET: Movies
         // GET: Movies
         public async Task<IActionResult> Index(string movieGenre, string searchString)
