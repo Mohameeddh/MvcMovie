@@ -19,10 +19,6 @@ namespace MvcMovie.Controllers
             _context = context;
         }
 
-        public IActionResult Booking()
-        {
-            return View();
-        }
 
         // GET: Movies
         // GET: Movies
