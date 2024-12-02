@@ -39,7 +39,7 @@ namespace MvcMovie.Controllers
             {
                 _context.Add(booking);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index)); // Eller en annan vy/åtgärd
+                return RedirectToAction(nameof(Index));
             }
             return View(booking);
         }
