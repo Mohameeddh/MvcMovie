@@ -31,6 +31,19 @@ namespace MvcMovie.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Booking(Booking booking)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(booking);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index)); // Eller en annan vy/åtgärd
+            }
+            return View(booking);
+        }
+
         // GET: Bookings/Details/5
         public async Task<IActionResult> Details(int? id)
         {
