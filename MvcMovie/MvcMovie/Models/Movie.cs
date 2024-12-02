@@ -36,4 +36,6 @@ public class Movie
     [StringLength(5)]
     [Required]
     public string? Rating { get; set; }
+
+    public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
 }
