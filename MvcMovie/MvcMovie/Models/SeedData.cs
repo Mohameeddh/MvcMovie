@@ -59,6 +59,10 @@ public static class SeedData
             );
             context.SaveChanges();
 
+            if (context.Seats.Any())
+            {
+                return;   // DB has been seeded
+            }
             context.Seats.AddRange(
                 new Seat
                 {

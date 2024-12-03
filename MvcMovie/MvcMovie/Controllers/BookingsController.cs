@@ -31,19 +31,6 @@ namespace MvcMovie.Controllers
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Booking(Booking booking)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(booking);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(booking);
-        }
-
         // GET: Bookings/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -73,9 +60,9 @@ namespace MvcMovie.Controllers
         // POST: Bookings/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        /*[HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,SeatNr,BookingNr,VisitorName,VisitorEmail,ShowId")] Booking booking)
+        public async Task<IActionResult> Create([Bind("SeatNr,BookingNr,VisitorName,VisitorEmail")] Booking booking)
         {
             if (ModelState.IsValid)
             {
@@ -84,6 +71,32 @@ namespace MvcMovie.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["ShowId"] = new SelectList(_context.Shows, "Id", "Id", booking.ShowId);
+            return View(booking);
+        }*/
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Booking([Bind("SeatNr,BookingNr,VisitorName,VisitorEmail, MovieId")] Booking booking)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(booking);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Values.SelectMany(v => v.Errors)
+                                              .Select(e => e.ErrorMessage)
+                                              .ToList();
+                foreach (var error in errors)
+                {
+                    Console.WriteLine($"Validation error: {error}");
+                }
+                return View(booking);
+            }
+            //ViewData["ShowId"] = new SelectList(_context.Shows, "Id", "Id", booking.ShowId);
             return View(booking);
         }
 

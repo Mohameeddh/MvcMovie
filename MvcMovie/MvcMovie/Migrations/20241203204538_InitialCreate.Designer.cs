@@ -12,8 +12,8 @@ using MvcMovie.Data;
 namespace MvcMovie.Migrations
 {
     [DbContext(typeof(MvcMovieContext))]
-    [Migration("20241203185322_SeedSeats")]
-    partial class SeedSeats
+    [Migration("20241203204538_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -175,7 +175,7 @@ namespace MvcMovie.Migrations
             modelBuilder.Entity("MvcMovie.Models.Booking", b =>
                 {
                     b.HasOne("MvcMovie.Models.Movie", "Movies")
-                        .WithMany("Bookings")
+                        .WithMany()
                         .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -208,11 +208,6 @@ namespace MvcMovie.Migrations
                     b.Navigation("Movie");
 
                     b.Navigation("Salon");
-                });
-
-            modelBuilder.Entity("MvcMovie.Models.Movie", b =>
-                {
-                    b.Navigation("Bookings");
                 });
 
             modelBuilder.Entity("MvcMovie.Models.Salon", b =>

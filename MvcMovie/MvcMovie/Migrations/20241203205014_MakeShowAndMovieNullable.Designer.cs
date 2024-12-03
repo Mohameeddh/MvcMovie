@@ -12,8 +12,8 @@ using MvcMovie.Data;
 namespace MvcMovie.Migrations
 {
     [DbContext(typeof(MvcMovieContext))]
-    [Migration("20241127171735_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20241203205014_MakeShowAndMovieNullable")]
+    partial class MakeShowAndMovieNullable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,23 +35,31 @@ namespace MvcMovie.Migrations
 
                     b.Property<string>("BookingNr")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(65)
+                        .HasColumnType("nvarchar(65)");
+
+                    b.Property<int>("MovieId")
+                        .HasColumnType("int");
 
                     b.Property<int>("SeatNr")
                         .HasColumnType("int");
 
-                    b.Property<int>("ShowId")
+                    b.Property<int?>("ShowId")
                         .HasColumnType("int");
 
                     b.Property<string>("VisitorEmail")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(65)
+                        .HasColumnType("nvarchar(65)");
 
                     b.Property<string>("VisitorName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(65)
+                        .HasColumnType("nvarchar(65)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("MovieId");
 
                     b.HasIndex("ShowId");
 
@@ -67,22 +75,30 @@ namespace MvcMovie.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
 
                     b.Property<string>("Genre")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
 
                     b.Property<TimeSpan>("Length")
                         .HasColumnType("time");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<string>("Rating")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(5)
+                        .HasColumnType("nvarchar(5)");
 
                     b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(65)
+                        .HasColumnType("nvarchar(65)");
 
                     b.HasKey("Id");
 
@@ -106,6 +122,28 @@ namespace MvcMovie.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Salons");
+                });
+
+            modelBuilder.Entity("MvcMovie.Models.Seat", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("IsAvailable")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Number")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Row")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Seats");
                 });
 
             modelBuilder.Entity("MvcMovie.Models.Show", b =>
@@ -136,11 +174,17 @@ namespace MvcMovie.Migrations
 
             modelBuilder.Entity("MvcMovie.Models.Booking", b =>
                 {
-                    b.HasOne("MvcMovie.Models.Show", "Show")
-                        .WithMany("Bookings")
-                        .HasForeignKey("ShowId")
+                    b.HasOne("MvcMovie.Models.Movie", "Movies")
+                        .WithMany()
+                        .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("MvcMovie.Models.Show", "Show")
+                        .WithMany("Bookings")
+                        .HasForeignKey("ShowId");
+
+                    b.Navigation("Movies");
 
                     b.Navigation("Show");
                 });

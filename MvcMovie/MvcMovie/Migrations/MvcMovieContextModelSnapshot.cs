@@ -41,7 +41,7 @@ namespace MvcMovie.Migrations
                     b.Property<int>("SeatNr")
                         .HasColumnType("int");
 
-                    b.Property<int>("ShowId")
+                    b.Property<int?>("ShowId")
                         .HasColumnType("int");
 
                     b.Property<string>("VisitorEmail")
@@ -172,16 +172,14 @@ namespace MvcMovie.Migrations
             modelBuilder.Entity("MvcMovie.Models.Booking", b =>
                 {
                     b.HasOne("MvcMovie.Models.Movie", "Movies")
-                        .WithMany("Bookings")
+                        .WithMany()
                         .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("MvcMovie.Models.Show", "Show")
                         .WithMany("Bookings")
-                        .HasForeignKey("ShowId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ShowId");
 
                     b.Navigation("Movies");
 
@@ -205,11 +203,6 @@ namespace MvcMovie.Migrations
                     b.Navigation("Movie");
 
                     b.Navigation("Salon");
-                });
-
-            modelBuilder.Entity("MvcMovie.Models.Movie", b =>
-                {
-                    b.Navigation("Bookings");
                 });
 
             modelBuilder.Entity("MvcMovie.Models.Salon", b =>
