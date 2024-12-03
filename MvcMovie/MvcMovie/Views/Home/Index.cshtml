@@ -1,6 +1,82 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model MvcMovie.Models.MovieGenreViewModel
+
+@{
+    ViewData["Title"] = "Index";
 }
+
+<div class="content">
+    <h1><strong>Ossa Bio</strong></h1>
+</div>
+
+<form asp-controller="Movies" asp-action="Index" method="get">
+    <p>
+
+        <select asp-for="MovieGenre" asp-items="Model.Genres">
+            <option value="">All</option>
+        </select>
+
+        <label>Title: <input type="text" asp-for="SearchString" /></label>
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies![0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies![0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies![0].Length)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies![0].Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies![0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies![0].Rating)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Movies!)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Length)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rating)
+                </td>
+                <td>
+                    <a asp-controller="Movies" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-controller="Movies" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-controller="Movies" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    | <a asp-controller="Bookings" asp-action="Booking" asp-route-id="@item.Id">Booking</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
 
 <style>
     body {
@@ -11,19 +87,28 @@
         color: white;
     }
 
+    .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+        margin-top: 0;
+        margin-bottom: 6rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    table{
+        background-color: lightgrey;
+    }
+
     .content {
-        display: flex;
+        display: contents;
         flex-direction: column;
         justify-content: flex-start;
         padding: 20px;
         align-items: center;
         text-align: center;
         min-height: 100vh; 
-        color: black;
+        color: white;
     }
 
 </style>
 
-<div class="content">
-    <h1><strong>Ossa Bio</strong></h1>
-</div>
+
