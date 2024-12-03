@@ -17,7 +17,7 @@ public static class SeedData
             
             if (context.Movies.Any())
             {
-                return;   // DB has been seeded
+                return;
             }
             context.Movies.AddRange(
                 new Movie
@@ -61,7 +61,7 @@ public static class SeedData
 
             if (context.Seats.Any())
             {
-                return;   // DB has been seeded
+                return;
             }
             context.Seats.AddRange(
                 new Seat

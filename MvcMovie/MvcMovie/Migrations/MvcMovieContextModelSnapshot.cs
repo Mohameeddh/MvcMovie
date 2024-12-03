@@ -35,7 +35,7 @@ namespace MvcMovie.Migrations
                         .HasMaxLength(65)
                         .HasColumnType("nvarchar(65)");
 
-                    b.Property<int>("MovieId")
+                    b.Property<int?>("MovieId")
                         .HasColumnType("int");
 
                     b.Property<int>("SeatNr")
@@ -173,9 +173,7 @@ namespace MvcMovie.Migrations
                 {
                     b.HasOne("MvcMovie.Models.Movie", "Movies")
                         .WithMany()
-                        .HasForeignKey("MovieId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("MovieId");
 
                     b.HasOne("MvcMovie.Models.Show", "Show")
                         .WithMany("Bookings")

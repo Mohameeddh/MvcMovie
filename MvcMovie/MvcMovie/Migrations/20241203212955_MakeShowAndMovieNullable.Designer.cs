@@ -12,8 +12,8 @@ using MvcMovie.Data;
 namespace MvcMovie.Migrations
 {
     [DbContext(typeof(MvcMovieContext))]
-    [Migration("20241203204538_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20241203212955_MakeShowAndMovieNullable")]
+    partial class MakeShowAndMovieNullable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,13 +38,13 @@ namespace MvcMovie.Migrations
                         .HasMaxLength(65)
                         .HasColumnType("nvarchar(65)");
 
-                    b.Property<int>("MovieId")
+                    b.Property<int?>("MovieId")
                         .HasColumnType("int");
 
                     b.Property<int>("SeatNr")
                         .HasColumnType("int");
 
-                    b.Property<int>("ShowId")
+                    b.Property<int?>("ShowId")
                         .HasColumnType("int");
 
                     b.Property<string>("VisitorEmail")
@@ -176,15 +176,11 @@ namespace MvcMovie.Migrations
                 {
                     b.HasOne("MvcMovie.Models.Movie", "Movies")
                         .WithMany()
-                        .HasForeignKey("MovieId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("MovieId");
 
                     b.HasOne("MvcMovie.Models.Show", "Show")
                         .WithMany("Bookings")
-                        .HasForeignKey("ShowId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ShowId");
 
                     b.Navigation("Movies");
 
