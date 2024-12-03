@@ -14,7 +14,7 @@ public static class SeedData
             serviceProvider.GetRequiredService<
                 DbContextOptions<MvcMovieContext>>()))
         {
-            // Look for any movies.
+            
             if (context.Movies.Any())
             {
                 return;   // DB has been seeded
@@ -55,6 +55,41 @@ public static class SeedData
                     Genre = "Western",
                     Rating = "R",
                     Price = 3.99M
+                }
+            );
+            context.SaveChanges();
+
+            context.Seats.AddRange(
+                new Seat
+                {
+                    Id = 1,
+                    Row = 1,
+                    Number = 1,
+                    IsAvailable = true,
+                },
+
+                new Seat
+                {
+                    Id = 2,
+                    Row = 2,
+                    Number = 2,
+                    IsAvailable = true,
+                },
+
+                new Seat
+                {
+                    Id = 3,
+                    Row = 3,
+                    Number = 3,
+                    IsAvailable = true,
+                },
+
+                new Seat
+                {
+                    Id = 4,
+                    Row = 4,
+                    Number = 4,
+                    IsAvailable = false,
                 }
             );
             context.SaveChanges();
