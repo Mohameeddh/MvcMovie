@@ -45,12 +45,16 @@ namespace MvcMovie.Controllers
             {
                 movies = movies.Where(x => x.Genre == movieGenre);
             }
-
             var movieGenreVM = new MovieGenreViewModel
             {
                 Genres = new SelectList(await genreQuery.Distinct().ToListAsync()),
                 Movies = await movies.ToListAsync()
             };
+
+            if (!movieGenreVM.Movies.Any())
+            {
+                Console.WriteLine("Ingen film hittades.");
+            }
 
             return View(movieGenreVM);
         }

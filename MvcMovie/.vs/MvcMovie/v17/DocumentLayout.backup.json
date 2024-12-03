@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|c:\\users\\min dator\\documents\\github\\mvcmovie\\mvcmovie\\mvcmovie\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|solutionrelative:mvcmovie\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|c:\\users\\min dator\\documents\\github\\mvcmovie\\mvcmovie\\mvcmovie\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|solutionrelative:mvcmovie\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|c:\\users\\min dator\\documents\\github\\mvcmovie\\mvcmovie\\mvcmovie\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|solutionrelative:mvcmovie\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|c:\\users\\min dator\\documents\\github\\mvcmovie\\mvcmovie\\mvcmovie\\controllers\\bookingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|solutionrelative:mvcmovie\\controllers\\bookingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|c:\\users\\min dator\\documents\\github\\mvcmovie\\mvcmovie\\mvcmovie\\views\\bookings\\booking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|solutionrelative:mvcmovie\\views\\bookings\\booking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|c:\\users\\min dator\\documents\\github\\mvcmovie\\mvcmovie\\mvcmovie\\views\\bookings\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|solutionrelative:mvcmovie\\views\\bookings\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|c:\\users\\min dator\\documents\\github\\mvcmovie\\mvcmovie\\mvcmovie\\views\\movies\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|solutionrelative:mvcmovie\\views\\movies\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -63,66 +51,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Privacy.cshtml",
-              "DocumentMoniker": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Views\\Home\\Privacy.cshtml",
-              "RelativeDocumentMoniker": "MvcMovie\\Views\\Home\\Privacy.cshtml",
-              "ToolTip": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Views\\Home\\Privacy.cshtml",
-              "RelativeToolTip": "MvcMovie\\Views\\Home\\Privacy.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACcAAAAEAAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Views\\Movies\\Index.cshtml",
+              "RelativeDocumentMoniker": "MvcMovie\\Views\\Movies\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Views\\Movies\\Index.cshtml",
+              "RelativeToolTip": "MvcMovie\\Views\\Movies\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-02T19:01:13.686Z",
+              "WhenOpened": "2024-12-03T14:26:34.782Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "MvcMovie\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "MvcMovie\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAACAAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-02T18:55:29.664Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Booking.cshtml",
-              "DocumentMoniker": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Views\\Bookings\\Booking.cshtml",
-              "RelativeDocumentMoniker": "MvcMovie\\Views\\Bookings\\Booking.cshtml",
-              "ToolTip": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Views\\Bookings\\Booking.cshtml",
-              "RelativeToolTip": "MvcMovie\\Views\\Bookings\\Booking.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-02T18:52:04.465Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Views\\Bookings\\Index.cshtml",
-              "RelativeDocumentMoniker": "MvcMovie\\Views\\Bookings\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Views\\Bookings\\Index.cshtml",
-              "RelativeToolTip": "MvcMovie\\Views\\Bookings\\Index.cshtml",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "MvcMovie\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Views\\Home\\Index.cshtml*",
+              "RelativeToolTip": "MvcMovie\\Views\\Home\\Index.cshtml*",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAswBgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-02T18:51:37.742Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BookingsController.cs",
-              "DocumentMoniker": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Controllers\\BookingsController.cs",
-              "RelativeDocumentMoniker": "MvcMovie\\Controllers\\BookingsController.cs",
-              "ToolTip": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Controllers\\BookingsController.cs",
-              "RelativeToolTip": "MvcMovie\\Controllers\\BookingsController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwB8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T18:47:09.54Z",
+              "WhenOpened": "2024-12-03T14:19:53.887Z",
               "EditorCaption": ""
             }
           ]
