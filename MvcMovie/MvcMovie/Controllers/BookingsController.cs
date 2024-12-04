@@ -68,16 +68,17 @@ namespace MvcMovie.Controllers
         }
 
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+       [HttpPost]
+       [ValidateAntiForgeryToken]
         public async Task<IActionResult> Booking(Booking booking)
         {
             // Om ShowId inte är satt, sätt den till ett standardvärde eller hämta det från en annan källa
+            //teeeeeeesst
             if (booking.ShowId == null || booking.ShowId == 0)
             {
                 // Exempel: Hämta ett ShowId från databasen eller sätt ett standardvärde
                 booking.ShowId = _context.Shows.FirstOrDefault()?.Id; // Hämta det första ShowId:t från databasen
-                                                                      // Eller sätt ett specifikt värde för showId om det är känt (t.ex. en parameter i URL)
+                // Eller sätt ett specifikt värde för showId om det är känt (t.ex. en parameter i URL)
             }
 
             if (_context.Bookings.Any(b => b.ShowId == booking.ShowId && b.SeatNr == booking.SeatNr))
