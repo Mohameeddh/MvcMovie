@@ -51,54 +51,28 @@ namespace MvcMovie.Controllers
         }
 
         // GET: Bookings/Create
-        public IActionResult Create()
+        public IActionResult Create(int seatNr)
         {
-            ViewData["ShowId"] = new SelectList(_context.Shows, "Id", "Id");
+            // Hämta de bokade stolarna för den valda showen
+            var bookedSeats = _context.Bookings
+                               .Where(b => b.SeatNr == seatNr)
+                               .Select(b => b.SeatNr)
+                               .ToList();
+
+            // Skapa en lista med stolar från 1 till 40 som inte är bokade
+            var availableSeats = Enumerable.Range(1, 40)
+                                           .Where(seat => !bookedSeats.Contains(seat))
+                                           .ToList();
+
+            // Skicka den tillgängliga listan av stolar till vyn
+            ViewData["AvailableSeats"] = new SelectList(availableSeats);
+
+            // Skicka ShowId till vyn så att användaren kan välja en show
+            ViewData["ShowId"] = new SelectList(_context.Shows, "Id", "Name", seatNr);
+
             return View();
         }
 
-        // POST: Bookings/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        /*[HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("SeatNr,BookingNr,VisitorName,VisitorEmail")] Booking booking)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(booking);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["ShowId"] = new SelectList(_context.Shows, "Id", "Id", booking.ShowId);
-            return View(booking);
-        }*/
-
-       /* [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Booking([Bind("SeatNr,BookingNr,VisitorName,VisitorEmail, MovieId")] Booking booking)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(booking);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-
-            if (!ModelState.IsValid)
-            {
-                var errors = ModelState.Values.SelectMany(v => v.Errors)
-                                              .Select(e => e.ErrorMessage)
-                                              .ToList();
-                foreach (var error in errors)
-                {
-                    Console.WriteLine($"Validation error: {error}");
-                }
-                return View(booking);
-            }
-            //ViewData["ShowId"] = new SelectList(_context.Shows, "Id", "Id", booking.ShowId);
-            return View(booking);
-        }*/
 
         [HttpPost]
         [ValidateAntiForgeryToken]

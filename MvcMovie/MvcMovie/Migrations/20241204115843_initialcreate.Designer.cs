@@ -12,8 +12,8 @@ using MvcMovie.Data;
 namespace MvcMovie.Migrations
 {
     [DbContext(typeof(MvcMovieContext))]
-    [Migration("20241203212955_MakeShowAndMovieNullable")]
-    partial class MakeShowAndMovieNullable
+    [Migration("20241204115843_initialcreate")]
+    partial class initialcreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,9 +38,6 @@ namespace MvcMovie.Migrations
                         .HasMaxLength(65)
                         .HasColumnType("nvarchar(65)");
 
-                    b.Property<int?>("MovieId")
-                        .HasColumnType("int");
-
                     b.Property<int>("SeatNr")
                         .HasColumnType("int");
 
@@ -58,8 +55,6 @@ namespace MvcMovie.Migrations
                         .HasColumnType("nvarchar(65)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("MovieId");
 
                     b.HasIndex("ShowId");
 
@@ -174,15 +169,9 @@ namespace MvcMovie.Migrations
 
             modelBuilder.Entity("MvcMovie.Models.Booking", b =>
                 {
-                    b.HasOne("MvcMovie.Models.Movie", "Movies")
-                        .WithMany()
-                        .HasForeignKey("MovieId");
-
                     b.HasOne("MvcMovie.Models.Show", "Show")
-                        .WithMany("Bookings")
+                        .WithMany()
                         .HasForeignKey("ShowId");
-
-                    b.Navigation("Movies");
 
                     b.Navigation("Show");
                 });
@@ -209,11 +198,6 @@ namespace MvcMovie.Migrations
             modelBuilder.Entity("MvcMovie.Models.Salon", b =>
                 {
                     b.Navigation("Shows");
-                });
-
-            modelBuilder.Entity("MvcMovie.Models.Show", b =>
-                {
-                    b.Navigation("Bookings");
                 });
 #pragma warning restore 612, 618
         }

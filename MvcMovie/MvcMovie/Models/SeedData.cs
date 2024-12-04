@@ -59,44 +59,102 @@ public static class SeedData
             );
             context.SaveChanges();
 
-            if (context.Seats.Any())
+            if (context.Salons.Any())
             {
-                return;
+                var salons = new List<Salon>
+        {
+            new Salon 
+            { 
+                SalonNr = 1, 
+                NumberOfSeats = 40 
+            },
+
+            new Salon 
+            { 
+                SalonNr = 2, 
+                NumberOfSeats = 50 
+            },
+
+            new Salon 
+            { 
+                SalonNr = 3, 
+                NumberOfSeats = 40 
+            },
+
+            new Salon 
+            { 
+                SalonNr = 4, 
+                NumberOfSeats = 50 
+            },
+
+            new Salon 
+            { 
+                SalonNr = 5, 
+                NumberOfSeats = 40 
+            },
+
+            new Salon 
+            { 
+                SalonNr = 6, 
+                NumberOfSeats = 50 
+            },
+
+            new Salon 
+            { 
+                SalonNr = 7, 
+                NumberOfSeats = 40 
+            },
+
+            new Salon 
+            { 
+                SalonNr = 8, 
+                NumberOfSeats = 50 
             }
-            context.Seats.AddRange(
-                new Seat
-                {
-                    Id = 1,
-                    Row = 1,
-                    Number = 1,
-                    IsAvailable = true,
-                },
 
-                new Seat
-                {
-                    Id = 2,
-                    Row = 2,
-                    Number = 2,
-                    IsAvailable = true,
-                },
+        };
 
-                new Seat
-                {
-                    Id = 3,
-                    Row = 3,
-                    Number = 3,
-                    IsAvailable = true,
-                },
+                context.Salons.AddRange(salons);
+                context.SaveChanges();
+            }
 
-                new Seat
-                {
-                    Id = 4,
-                    Row = 4,
-                    Number = 4,
-                    IsAvailable = false,
-                }
-            );
-            context.SaveChanges();
+            /* if (context.Seats.Any())
+             {
+                 return;
+             }
+             context.Seats.AddRange(
+                 new Seat
+                 {
+                     Id = 1,
+                     Row = 1,
+                     Number = 1,
+                     IsAvailable = true,
+                 },
+
+                 new Seat
+                 {
+                     Id = 2,
+                     Row = 2,
+                     Number = 2,
+                     IsAvailable = true,
+                 },
+
+                 new Seat
+                 {
+                     Id = 3,
+                     Row = 3,
+                     Number = 3,
+                     IsAvailable = true,
+                 },
+
+                 new Seat
+                 {
+                     Id = 4,
+                     Row = 4,
+                     Number = 4,
+                     IsAvailable = false,
+                 }
+             );
+             context.SaveChanges();*/
         }
     }
 }

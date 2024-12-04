@@ -91,7 +91,6 @@ namespace MvcMovie.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    MovieId = table.Column<int>(type: "int", nullable: true),
                     SeatNr = table.Column<int>(type: "int", nullable: false),
                     BookingNr = table.Column<string>(type: "nvarchar(65)", maxLength: 65, nullable: false),
                     VisitorName = table.Column<string>(type: "nvarchar(65)", maxLength: 65, nullable: false),
@@ -102,22 +101,11 @@ namespace MvcMovie.Migrations
                 {
                     table.PrimaryKey("PK_Bookings", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Bookings_Movies_MovieId",
-                        column: x => x.MovieId,
-                        principalTable: "Movies",
-                        principalColumn: "Id");
-                    table.ForeignKey(
                         name: "FK_Bookings_Shows_ShowId",
                         column: x => x.ShowId,
                         principalTable: "Shows",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        principalColumn: "Id");
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Bookings_MovieId",
-                table: "Bookings",
-                column: "MovieId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Bookings_ShowId",
