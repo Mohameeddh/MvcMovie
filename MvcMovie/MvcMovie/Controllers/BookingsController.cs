@@ -50,27 +50,22 @@ namespace MvcMovie.Controllers
             return View(booking);
         }
 
-        // GET: Bookings/Create
-        public IActionResult Create(int seatNr)
+        [HttpGet]
+        public IActionResult Booking(int showId)
         {
-            // Hämta de bokade stolarna för den valda showen
+            var totalSeats = 40;
             var bookedSeats = _context.Bookings
-                               .Where(b => b.SeatNr == seatNr)
-                               .Select(b => b.SeatNr)
-                               .ToList();
+                .Where(b => b.ShowId == showId)
+                .Select(b => b.SeatNr)
+                .ToList();
 
-            // Skapa en lista med stolar från 1 till 40 som inte är bokade
-            var availableSeats = Enumerable.Range(1, 40)
+            var availableSeats = Enumerable.Range(1, totalSeats)
                                            .Where(seat => !bookedSeats.Contains(seat))
                                            .ToList();
-
-            // Skicka den tillgängliga listan av stolar till vyn
             ViewData["AvailableSeats"] = new SelectList(availableSeats);
 
-            // Skicka ShowId till vyn så att användaren kan välja en show
-            ViewData["ShowId"] = new SelectList(_context.Shows, "Id", "Name", seatNr);
-
-            return View();
+            var booking = new Booking { ShowId = showId };
+            return View(booking);
         }
 
 

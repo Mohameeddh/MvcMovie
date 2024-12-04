@@ -117,7 +117,7 @@ public static class SeedData
                 context.SaveChanges();
             }
 
-            /* if (context.Seats.Any())
+             if (context.Seats.Any())
              {
                  return;
              }
@@ -154,7 +154,7 @@ public static class SeedData
                      IsAvailable = false,
                  }
              );
-             context.SaveChanges();*/
+             context.SaveChanges();
         }
     }
 }
