@@ -5,7 +5,7 @@ namespace MvcMovie.Models
     public class Booking
     {
         public int Id { get; set; }
-        public int? MovieId { get; set; }
+        //public int? MovieId { get; set; }
 
         [Range(1, 40, ErrorMessage = "SeatNr must be between 1 and 40.")]
         public int SeatNr { get; set; }
@@ -27,6 +27,6 @@ namespace MvcMovie.Models
 
         public int? ShowId { get; set; }
         public Show? Show { get; set; }
-        public Movie? Movies { get; set; }
+        //public Movie? Movies { get; set; }
     }
 }

@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Find Booking";
+}
+
+<h2>Find Booking</h2>
+
+<form asp-action="Find">
+    <div class="form-group">
+        <label for="bookingNr">Enter your Booking Number:</label>
+        <input type="text" id="bookingNr" name="bookingNr" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Find</button>
+</form>

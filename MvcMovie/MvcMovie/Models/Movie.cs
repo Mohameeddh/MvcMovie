@@ -10,12 +10,12 @@ public class Movie
     [StringLength(65, MinimumLength =1)]
     [RegularExpression(@"^(?!\s*$).+", ErrorMessage = "Title cannot be empty or whitespace.")]
     [Required]
-    public string? Title { get; set; }
+    public string Title { get; set; }
 
     [StringLength(300, MinimumLength =5)]
     [RegularExpression(@"^(?!\s*$).+", ErrorMessage = "Description cannot be empty or whitespace.")]
     [Required]
-    public string? Description { get; set; }
+    public string Description { get; set; }
 
     [RegularExpression(@"^(?!\s*$).+", ErrorMessage = "Length cannot be empty or whitespace.")]
     [Required]
@@ -24,7 +24,7 @@ public class Movie
     [StringLength(25, MinimumLength =3)]
     [RegularExpression(@"^(?!\s*$).+", ErrorMessage = "Genre cannot be empty or whitespace.")]
     [Required]
-    public string? Genre { get; set; }
+    public string Genre { get; set; }
 
     [Range(120, 180)]
     [DataType(DataType.Currency)]

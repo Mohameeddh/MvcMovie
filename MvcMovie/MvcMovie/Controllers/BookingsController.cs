@@ -74,7 +74,7 @@ namespace MvcMovie.Controllers
             return View(booking);
         }*/
 
-        [HttpPost]
+       /* [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Booking([Bind("SeatNr,BookingNr,VisitorName,VisitorEmail, MovieId")] Booking booking)
         {
@@ -97,6 +97,42 @@ namespace MvcMovie.Controllers
                 return View(booking);
             }
             //ViewData["ShowId"] = new SelectList(_context.Shows, "Id", "Id", booking.ShowId);
+            return View(booking);
+        }*/
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Booking(Booking booking)
+        {
+            if (_context.Bookings.Any(b => b.ShowId == booking.ShowId && b.SeatNr == booking.SeatNr))
+            {
+                ModelState.AddModelError("SeatNr", "This seat is already booked.");
+                return View(booking);
+            }
+
+            booking.BookingNr = GenerateBookingNumber();
+            _context.Add(booking);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Confirmation", new { bookingNr = booking.BookingNr });
+        }
+
+        private string GenerateBookingNumber()
+        {
+            return Guid.NewGuid().ToString().Substring(0, 8).ToUpper();
+        }
+
+        public IActionResult Confirmation(string bookingNr)
+        {
+            var booking = _context.Bookings
+                .Include(b => b.Show)
+                .ThenInclude(s => s.Movie)
+                .Include(b => b.Show.Salon)
+                .FirstOrDefault(b => b.BookingNr == bookingNr);
+
+            if (booking == null)
+                return NotFound();
+
             return View(booking);
         }
 
@@ -190,6 +226,36 @@ namespace MvcMovie.Controllers
         private bool BookingExists(int id)
         {
             return _context.Bookings.Any(e => e.Id == id);
+        }
+
+        [HttpGet]
+        public IActionResult Find()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Find(string bookingNr)
+        {
+            if (string.IsNullOrEmpty(bookingNr))
+            {
+                ViewBag.Message = "Please enter a valid booking number.";
+                return View();
+            }
+
+            var booking = _context.Bookings
+                .Include(b => b.Show)
+                .ThenInclude(s => s.Movie)
+                .Include(b => b.Show.Salon)
+                .FirstOrDefault(b => b.BookingNr == bookingNr);
+
+            if (booking == null)
+            {
+                ViewBag.Message = "Booking not found. Please check your booking number.";
+                return View();
+            }
+
+            return RedirectToAction("Confirmation", new { bookingNr });
         }
     }
 }

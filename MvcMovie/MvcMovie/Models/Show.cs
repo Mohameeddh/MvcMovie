@@ -11,6 +11,7 @@
         public int MovieId { get; set; }
         public int SalonId { get; set; }
         public Salon Salon { get; set; }
-        public ICollection<Booking> Bookings { get; set; }
+        
+        //public ICollection<Booking> Bookings { get; set; }
     }
 }
