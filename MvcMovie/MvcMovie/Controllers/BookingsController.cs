@@ -55,7 +55,6 @@ namespace MvcMovie.Controllers
         {
             var totalSeats = 40;
             var bookedSeats = _context.Bookings
-                .Where(b => b.ShowId == showId)
                 .Select(b => b.SeatNr)
                 .ToList();
 
