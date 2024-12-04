@@ -19,9 +19,9 @@ namespace MvcMovie.Models
         [RegularExpression(@"^(?!\s*$).+", ErrorMessage = "Name cannot be empty or whitespace.")]
         [Required]
         public string VisitorName { get; set; }
-       
+
         [StringLength(65, MinimumLength = 1)]
-        [RegularExpression(@"^(?!\s*$).+", ErrorMessage = "Email cannot be empty or whitespace.")]
+        [RegularExpression(@"^[A-Za-z0-9._%+-]+@(gmail\.com|outlook\.com)$", ErrorMessage = "Email must be from 'gmail.com' or 'outlook.com'.")]
         [Required]
         public string VisitorEmail { get; set; }
 
