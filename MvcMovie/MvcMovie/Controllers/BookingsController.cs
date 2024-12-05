@@ -68,19 +68,19 @@ namespace MvcMovie.Controllers
         }
 
 
-       [HttpPost]
-       [ValidateAntiForgeryToken]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Booking(Booking booking)
         {
-            // Om ShowId inte är satt, sätt den till ett standardvärde eller hämta det från en annan källa
-            //teeeeeeesst
+            // Tilldela ett unikt ShowId i nummerordning
             if (booking.ShowId == null || booking.ShowId == 0)
             {
-                // Exempel: Hämta ett ShowId från databasen eller sätt ett standardvärde
-                booking.ShowId = _context.Shows.FirstOrDefault()?.Id; // Hämta det första ShowId:t från databasen
-                // Eller sätt ett specifikt värde för showId om det är känt (t.ex. en parameter i URL)
+                // Hämta det högsta ShowId från befintliga bokningar och inkrementera
+                var latestShowId = _context.Bookings.OrderByDescending(b => b.ShowId).FirstOrDefault()?.ShowId ?? 0;
+                booking.ShowId = latestShowId + 1; // Tilldela nästa tillgängliga ID
             }
 
+            // Kontrollera om stolen redan är bokad
             if (_context.Bookings.Any(b => b.ShowId == booking.ShowId && b.SeatNr == booking.SeatNr))
             {
                 ModelState.AddModelError("SeatNr", "This seat is already booked.");
