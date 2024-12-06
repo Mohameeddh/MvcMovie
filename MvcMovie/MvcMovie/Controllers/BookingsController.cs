@@ -72,26 +72,36 @@ namespace MvcMovie.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Booking(Booking booking)
         {
-            // Tilldela ett unikt ShowId i nummerordning
-            if (booking.ShowId == null || booking.ShowId == 0)
+            // Kontrollera om det finns en Show som matchar den valda filmen (MovieId)
+            var existingShow = _context.Shows.FirstOrDefault(s => s.MovieId == booking.ShowId);
+
+            if (existingShow != null)
             {
-                // Hämta det högsta ShowId från befintliga bokningar och inkrementera
-                var latestShowId = _context.Bookings.OrderByDescending(b => b.ShowId).FirstOrDefault()?.ShowId ?? 0;
-                booking.ShowId = latestShowId + 1; // Tilldela nästa tillgängliga ID
+                // Använd befintligt ShowId
+                booking.ShowId = existingShow.Id;
+            }
+            else
+            {
+                // Om ingen matchande Show hittas, ge ett felmeddelande
+                ModelState.AddModelError("ShowId", "No matching show found for the selected movie.");
+                return View(booking);
             }
 
-            // Kontrollera om stolen redan är bokad
+            // Kontrollera om platsen redan är bokad för denna ShowId
             if (_context.Bookings.Any(b => b.ShowId == booking.ShowId && b.SeatNr == booking.SeatNr))
             {
                 ModelState.AddModelError("SeatNr", "This seat is already booked.");
                 return View(booking);
             }
 
-            // Generera bokningsnummer och lägg till bokning
+            // Generera bokningsnummer
             booking.BookingNr = GenerateBookingNumber();
+
+            // Lägg till bokning i databasen
             _context.Add(booking);
             await _context.SaveChangesAsync();
 
+            // Skicka användaren till bekräftelsesidan
             return RedirectToAction("Confirmation", new { bookingNr = booking.BookingNr });
         }
 
