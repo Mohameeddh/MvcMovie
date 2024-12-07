@@ -12,9 +12,9 @@ else
     <p><strong>Movie Title:</strong> Not available</p>
 }
 
-@if (Model.Show?.Salon != null)
+@if (Model.SalonId != null)
 {
-    <p><strong>Salon:</strong> @Model.Show.Salon.SalonNr</p>
+    <p><strong>Salon:</strong> @Model.SalonId</p>
 }
 else
 {

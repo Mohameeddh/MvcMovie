@@ -26,6 +26,14 @@
             </div>
 
             <div class="form-group">
+                <label for="SalonId" class="control-label">Select a Salon</label>
+                <select asp-for="SalonId" class="form-control" asp-items="@(ViewData["Salons"] as SelectList)">
+                    <option value="">-- Select a Salons --</option>
+                </select>
+                <span asp-validation-for="SalonId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
                 <label asp-for="SeatNr" class="control-label">Select a Seat</label>
                 <select asp-for="SeatNr" class="form-control" asp-items="@(ViewData["AvailableSeats"] as SelectList)">
                     <option value="">-- Select a Seat --</option>

@@ -13,5 +13,7 @@ namespace MvcMovie.Models
         public int NumberOfSeats {get; set;}
 
         public ICollection<Show> Shows { get; set; }
+
+        public ICollection<Booking> Bookings { get; set; }
     }
 }

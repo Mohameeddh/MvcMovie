@@ -36,6 +36,11 @@ namespace MvcMovie.Migrations
                         .HasColumnType("nvarchar(65)");
 
                     b.Property<int?>("MovieId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SalonId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int>("SeatNr")
@@ -57,6 +62,8 @@ namespace MvcMovie.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("MovieId");
+
+                    b.HasIndex("SalonId");
 
                     b.HasIndex("ShowId");
 
@@ -110,9 +117,6 @@ namespace MvcMovie.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("BookingId")
-                        .HasColumnType("int");
-
                     b.Property<int>("NumberOfSeats")
                         .HasColumnType("int");
 
@@ -120,8 +124,6 @@ namespace MvcMovie.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("BookingId");
 
                     b.ToTable("Salons");
                 });
@@ -178,7 +180,15 @@ namespace MvcMovie.Migrations
                 {
                     b.HasOne("MvcMovie.Models.Movie", "Movies")
                         .WithMany()
-                        .HasForeignKey("MovieId");
+                        .HasForeignKey("MovieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MvcMovie.Models.Salon", "Salons")
+                        .WithMany("Bookings")
+                        .HasForeignKey("SalonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("MvcMovie.Models.Show", "Show")
                         .WithMany("Bookings")
@@ -186,14 +196,9 @@ namespace MvcMovie.Migrations
 
                     b.Navigation("Movies");
 
-                    b.Navigation("Show");
-                });
+                    b.Navigation("Salons");
 
-            modelBuilder.Entity("MvcMovie.Models.Salon", b =>
-                {
-                    b.HasOne("MvcMovie.Models.Booking", null)
-                        .WithMany("Salons")
-                        .HasForeignKey("BookingId");
+                    b.Navigation("Show");
                 });
 
             modelBuilder.Entity("MvcMovie.Models.Show", b =>
@@ -215,13 +220,10 @@ namespace MvcMovie.Migrations
                     b.Navigation("Salon");
                 });
 
-            modelBuilder.Entity("MvcMovie.Models.Booking", b =>
-                {
-                    b.Navigation("Salons");
-                });
-
             modelBuilder.Entity("MvcMovie.Models.Salon", b =>
                 {
+                    b.Navigation("Bookings");
+
                     b.Navigation("Shows");
                 });
 

@@ -64,6 +64,8 @@ namespace MvcMovie.Controllers
             ViewData["AvailableSeats"] = new SelectList(availableSeats);
             ViewData["Movies"] = new SelectList(_context.Movies, "Id", "Title");
 
+            ViewData["Salons"] = new SelectList(_context.Salons, "Id", "SalonNr");
+
             var booking = new Booking { ShowId = showId };
             return View(booking);
         }
@@ -73,24 +75,22 @@ namespace MvcMovie.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Booking(Booking booking)
         {
-            // Kontrollera om ShowId saknas och skapa en ny "Show" om det behövs
             if (booking.ShowId == null || booking.ShowId == 0)
             {
-                var newShow = CreateDefaultShow((int)booking.MovieId); // Skicka valt MovieId
+                var newShow = CreateDefaultShow((int)booking.MovieId);
                 _context.Shows.Add(newShow);
                 await _context.SaveChangesAsync();
 
                 booking.ShowId = newShow.Id;
             }
 
-            // Kontrollera om stolen redan är bokad
+
             if (_context.Bookings.Any(b => b.ShowId == booking.ShowId && b.SeatNr == booking.SeatNr))
             {
                 ModelState.AddModelError("SeatNr", "This seat is already booked.");
                 return View(booking);
             }
 
-            // Generera bokningsnummer och spara bokningen
             booking.BookingNr = GenerateBookingNumber();
             _context.Bookings.Add(booking);
             await _context.SaveChangesAsync();
@@ -102,8 +102,8 @@ namespace MvcMovie.Controllers
         {
             return new Show
             {
-                MovieId = movieId, // Använd valt MovieId
-                SalonId = (int)(_context.Salons.FirstOrDefault()?.Id), // Standardsalong (om sådan finns)
+                MovieId = movieId,
+                SalonId = (int)(_context.Salons.FirstOrDefault()?.Id),
                 DateAndTime = DateTime.Now
             };
         }
