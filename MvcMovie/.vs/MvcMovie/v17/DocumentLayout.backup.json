@@ -1,42 +1,32 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\khali\\OneDrive\\Dokument\\GitHub\\MvcMovie\\MvcMovie\\",
+  "WorkspaceRootPath": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|c:\\users\\khali\\onedrive\\dokument\\github\\mvcmovie\\mvcmovie\\mvcmovie\\controllers\\bookingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|solutionrelative:mvcmovie\\controllers\\bookingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/MvcMovieContext_b6872c72_58e8_4680_bf73_3ff3a9e2455b/True/SqlTable/dbo.Bookings.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|c:\\users\\khali\\onedrive\\dokument\\github\\mvcmovie\\mvcmovie\\mvcmovie\\controllers\\showscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|solutionrelative:mvcmovie\\controllers\\showscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/MvcMovieContext_b6872c72_58e8_4680_bf73_3ff3a9e2455b/True/SqlTable/dbo.Salons.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|c:\\users\\khali\\onedrive\\dokument\\github\\mvcmovie\\mvcmovie\\mvcmovie\\models\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|solutionrelative:mvcmovie\\models\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|c:\\users\\khali\\onedrive\\dokument\\github\\mvcmovie\\mvcmovie\\mvcmovie\\views\\bookings\\confirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|solutionrelative:mvcmovie\\views\\bookings\\confirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|c:\\users\\khali\\onedrive\\dokument\\github\\mvcmovie\\mvcmovie\\mvcmovie\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|solutionrelative:mvcmovie\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|c:\\users\\khali\\onedrive\\dokument\\github\\mvcmovie\\mvcmovie\\mvcmovie\\views\\bookings\\booking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|c:\\users\\min dator\\documents\\github\\mvcmovie\\mvcmovie\\mvcmovie\\views\\bookings\\booking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|solutionrelative:mvcmovie\\views\\bookings\\booking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|c:\\users\\khali\\onedrive\\dokument\\github\\mvcmovie\\mvcmovie\\mvcmovie\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|solutionrelative:mvcmovie\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|c:\\users\\min dator\\documents\\github\\mvcmovie\\mvcmovie\\mvcmovie\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|solutionrelative:mvcmovie\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|c:\\users\\khali\\onedrive\\dokument\\github\\mvcmovie\\mvcmovie\\mvcmovie\\models\\salon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|solutionrelative:mvcmovie\\models\\salon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|c:\\users\\min dator\\documents\\github\\mvcmovie\\mvcmovie\\mvcmovie\\views\\bookings\\confirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|solutionrelative:mvcmovie\\views\\bookings\\confirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|c:\\users\\khali\\onedrive\\dokument\\github\\mvcmovie\\mvcmovie\\mvcmovie\\models\\show.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|solutionrelative:mvcmovie\\models\\show.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|c:\\users\\min dator\\documents\\github\\mvcmovie\\mvcmovie\\mvcmovie\\models\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|solutionrelative:mvcmovie\\models\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|c:\\users\\min dator\\documents\\github\\mvcmovie\\mvcmovie\\mvcmovie\\controllers\\bookingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89474543-5370-4896-927A-2B2F752A0D13}|MvcMovie\\MvcMovie.csproj|solutionrelative:mvcmovie\\controllers\\bookingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,11 +36,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Bookmark",
@@ -58,7 +48,7 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Bookmark",
@@ -79,117 +69,86 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ShowsController.cs",
-              "DocumentMoniker": "C:\\Users\\khali\\OneDrive\\Dokument\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Controllers\\ShowsController.cs",
-              "RelativeDocumentMoniker": "MvcMovie\\Controllers\\ShowsController.cs",
-              "ToolTip": "C:\\Users\\khali\\OneDrive\\Dokument\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Controllers\\ShowsController.cs",
-              "RelativeToolTip": "MvcMovie\\Controllers\\ShowsController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T19:36:40.501Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Movie.cs",
-              "DocumentMoniker": "C:\\Users\\khali\\OneDrive\\Dokument\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Models\\Movie.cs",
-              "RelativeDocumentMoniker": "MvcMovie\\Models\\Movie.cs",
-              "ToolTip": "C:\\Users\\khali\\OneDrive\\Dokument\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Models\\Movie.cs",
-              "RelativeToolTip": "MvcMovie\\Models\\Movie.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAcwCUAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T19:30:26.79Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Booking.cs",
-              "DocumentMoniker": "C:\\Users\\khali\\OneDrive\\Dokument\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Models\\Booking.cs",
-              "RelativeDocumentMoniker": "MvcMovie\\Models\\Booking.cs",
-              "ToolTip": "C:\\Users\\khali\\OneDrive\\Dokument\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Models\\Booking.cs",
-              "RelativeToolTip": "MvcMovie\\Models\\Booking.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAcwB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T20:37:22.913Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Show.cs",
-              "DocumentMoniker": "C:\\Users\\khali\\OneDrive\\Dokument\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Models\\Show.cs",
-              "RelativeDocumentMoniker": "MvcMovie\\Models\\Show.cs",
-              "ToolTip": "C:\\Users\\khali\\OneDrive\\Dokument\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Models\\Show.cs",
-              "RelativeToolTip": "MvcMovie\\Models\\Show.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T20:37:11.41Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Salon.cs",
-              "DocumentMoniker": "C:\\Users\\khali\\OneDrive\\Dokument\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Models\\Salon.cs",
-              "RelativeDocumentMoniker": "MvcMovie\\Models\\Salon.cs",
-              "ToolTip": "C:\\Users\\khali\\OneDrive\\Dokument\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Models\\Salon.cs",
-              "RelativeToolTip": "MvcMovie\\Models\\Salon.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T15:18:50.932Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Confirmation.cshtml",
-              "DocumentMoniker": "C:\\Users\\khali\\OneDrive\\Dokument\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Views\\Bookings\\Confirmation.cshtml",
-              "RelativeDocumentMoniker": "MvcMovie\\Views\\Bookings\\Confirmation.cshtml",
-              "ToolTip": "C:\\Users\\khali\\OneDrive\\Dokument\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Views\\Bookings\\Confirmation.cshtml",
-              "RelativeToolTip": "MvcMovie\\Views\\Bookings\\Confirmation.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-04T14:58:50.324Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SeedData.cs",
-              "DocumentMoniker": "C:\\Users\\khali\\OneDrive\\Dokument\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Models\\SeedData.cs",
-              "RelativeDocumentMoniker": "MvcMovie\\Models\\SeedData.cs",
-              "ToolTip": "C:\\Users\\khali\\OneDrive\\Dokument\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Models\\SeedData.cs",
-              "RelativeToolTip": "MvcMovie\\Models\\SeedData.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAQwBgAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T11:56:28.053Z",
+              "Title": "dbo.Salons [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/MvcMovieContext_b6872c72_58e8_4680_bf73_3ff3a9e2455b/True/SqlTable/dbo.Salons.sql",
+              "ToolTip": "dbo.Salons [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-12-07T21:12:51.15Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "BookingsController.cs",
-              "DocumentMoniker": "C:\\Users\\khali\\OneDrive\\Dokument\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Controllers\\BookingsController.cs",
-              "RelativeDocumentMoniker": "MvcMovie\\Controllers\\BookingsController.cs",
-              "ToolTip": "C:\\Users\\khali\\OneDrive\\Dokument\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Controllers\\BookingsController.cs*",
-              "RelativeToolTip": "MvcMovie\\Controllers\\BookingsController.cs*",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAuwE8AAABGAAAAAAAAAA==",
+              "Title": "dbo.Bookings [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/MvcMovieContext_b6872c72_58e8_4680_bf73_3ff3a9e2455b/True/SqlTable/dbo.Bookings.sql",
+              "ToolTip": "dbo.Bookings [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-12-07T21:11:08.279Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Booking.cs",
+              "DocumentMoniker": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Models\\Booking.cs",
+              "RelativeDocumentMoniker": "MvcMovie\\Models\\Booking.cs",
+              "ToolTip": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Models\\Booking.cs",
+              "RelativeToolTip": "MvcMovie\\Models\\Booking.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T20:01:33.738Z",
+              "WhenOpened": "2024-12-07T21:04:18.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Booking.cshtml",
+              "DocumentMoniker": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Views\\Bookings\\Booking.cshtml",
+              "RelativeDocumentMoniker": "MvcMovie\\Views\\Bookings\\Booking.cshtml",
+              "ToolTip": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Views\\Bookings\\Booking.cshtml",
+              "RelativeToolTip": "MvcMovie\\Views\\Bookings\\Booking.cshtml",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-07T21:03:29.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Confirmation.cshtml",
+              "DocumentMoniker": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Views\\Bookings\\Confirmation.cshtml",
+              "RelativeDocumentMoniker": "MvcMovie\\Views\\Bookings\\Confirmation.cshtml",
+              "ToolTip": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Views\\Bookings\\Confirmation.cshtml",
+              "RelativeToolTip": "MvcMovie\\Views\\Bookings\\Confirmation.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-07T21:02:09.682Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Booking.cshtml",
-              "DocumentMoniker": "C:\\Users\\khali\\OneDrive\\Dokument\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Views\\Bookings\\Booking.cshtml",
-              "RelativeDocumentMoniker": "MvcMovie\\Views\\Bookings\\Booking.cshtml",
-              "ToolTip": "C:\\Users\\khali\\OneDrive\\Dokument\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Views\\Bookings\\Booking.cshtml",
-              "RelativeToolTip": "MvcMovie\\Views\\Bookings\\Booking.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACEAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-03T19:52:43.163Z",
+              "Title": "SeedData.cs",
+              "DocumentMoniker": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Models\\SeedData.cs",
+              "RelativeDocumentMoniker": "MvcMovie\\Models\\SeedData.cs",
+              "ToolTip": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Models\\SeedData.cs",
+              "RelativeToolTip": "MvcMovie\\Models\\SeedData.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAowEwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T20:22:09.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BookingsController.cs",
+              "DocumentMoniker": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Controllers\\BookingsController.cs",
+              "RelativeDocumentMoniker": "MvcMovie\\Controllers\\BookingsController.cs",
+              "ToolTip": "C:\\Users\\Min dator\\Documents\\GitHub\\MvcMovie\\MvcMovie\\MvcMovie\\Controllers\\BookingsController.cs",
+              "RelativeToolTip": "MvcMovie\\Controllers\\BookingsController.cs",
+              "ViewState": "AgIAAN8AAAAAAAAAAAA8wPQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T17:18:38.686Z",
               "EditorCaption": ""
             }
           ]

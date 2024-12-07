@@ -59,65 +59,26 @@ public static class SeedData
             );
             context.SaveChanges();
 
-            if (context.Salons.Any())
+            if (!context.Salons.Any())
             {
                 var salons = new List<Salon>
-        {
-            new Salon 
-            { 
-                SalonNr = 1, 
-                NumberOfSeats = 40 
-            },
-
-            new Salon 
-            { 
-                SalonNr = 2, 
-                NumberOfSeats = 50 
-            },
-
-            new Salon 
-            { 
-                SalonNr = 3, 
-                NumberOfSeats = 40 
-            },
-
-            new Salon 
-            { 
-                SalonNr = 4, 
-                NumberOfSeats = 50 
-            },
-
-            new Salon 
-            { 
-                SalonNr = 5, 
-                NumberOfSeats = 40 
-            },
-
-            new Salon 
-            { 
-                SalonNr = 6, 
-                NumberOfSeats = 50 
-            },
-
-            new Salon 
-            { 
-                SalonNr = 7, 
-                NumberOfSeats = 40 
-            },
-
-            new Salon 
-            { 
-                SalonNr = 8, 
-                NumberOfSeats = 50 
-            }
-
-        };
+            {
+                new Salon { SalonNr = 1, NumberOfSeats = 40 },
+                new Salon { SalonNr = 2, NumberOfSeats = 50 },
+                new Salon { SalonNr = 3, NumberOfSeats = 40 },
+                new Salon { SalonNr = 4, NumberOfSeats = 50 },
+                new Salon { SalonNr = 5, NumberOfSeats = 40 },
+                new Salon { SalonNr = 6, NumberOfSeats = 50 },
+                new Salon { SalonNr = 7, NumberOfSeats = 40 },
+                new Salon { SalonNr = 8, NumberOfSeats = 50 }
+            };
 
                 context.Salons.AddRange(salons);
                 context.SaveChanges();
+
             }
 
-             if (context.Seats.Any())
+           /*  if (context.Seats.Any())
              {
                  return;
              }
@@ -154,7 +115,7 @@ public static class SeedData
                      IsAvailable = false,
                  }
              );
-             context.SaveChanges();
+             context.SaveChanges();*/
         }
     }
 }
