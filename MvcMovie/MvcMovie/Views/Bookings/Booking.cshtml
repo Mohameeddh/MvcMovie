@@ -14,10 +14,19 @@
         <form asp-action="Booking" method="post">
             @Html.AntiForgeryToken()
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ShowId" />
             <input type="hidden" asp-for="Id" />
 
             <div class="form-group">
-                <label asp-for="SeatNr" class="control-label"></label>
+                <label for="MovieId" class="control-label">Select a Movie</label>
+                <select asp-for="MovieId" class="form-control" asp-items="@(ViewData["Movies"] as SelectList)">
+                    <option value="">-- Select a Movie --</option>
+                </select>
+                <span asp-validation-for="MovieId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="SeatNr" class="control-label">Select a Seat</label>
                 <select asp-for="SeatNr" class="form-control" asp-items="@(ViewData["AvailableSeats"] as SelectList)">
                     <option value="">-- Select a Seat --</option>
                 </select>
@@ -25,27 +34,19 @@
             </div>
 
             <div class="form-group">
-                <label asp-for="VisitorName" class="control-label"></label>
-                <input asp-for="VisitorName" class="form-control" />
+                <label asp-for="VisitorName" class="control-label">Your Name</label>
+                <input asp-for="VisitorName" class="form-control" placeholder="Enter your name" />
                 <span asp-validation-for="VisitorName" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="VisitorEmail" class="control-label"></label>
-                <input asp-for="VisitorEmail" class="form-control" />
+                <label asp-for="VisitorEmail" class="control-label">Your Email</label>
+                <input asp-for="VisitorEmail" class="form-control" placeholder="Enter your email" />
                 <span asp-validation-for="VisitorEmail" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="Salons" class="control-label"></label>
-                <input asp-for="Salons" class="form-control" />
-                <span asp-validation-for="Salons" class="text-danger"></span>
-            </div>
-
-           
-
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Book Seat" class="btn btn-primary" />
             </div>
         </form>
     </div>

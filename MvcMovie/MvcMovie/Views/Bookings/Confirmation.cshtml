@@ -1,9 +1,24 @@
-﻿@model MvcMovie.Models.Booking
-
-<h2>Booking Confirmation</h2>
+﻿<h2>Booking Confirmation</h2>
 <p>Thank you for your booking!</p>
 <p><strong>Booking Number:</strong> @Model.BookingNr</p>
 <p><strong>Seat:</strong> @Model.SeatNr</p>
-<p><strong>Movie Title:</strong> @Model.Show.Movie.Title</p>
-<p><strong>Salon:</strong> @Model.Show.Salon.SalonNr</p>
-<p><strong>Salon:</strong> @Model.Show.DateAndTime</p>
+
+@if (Model.Show?.Movie != null)
+{
+    <p><strong>Movie Title:</strong> @Model.Show.Movie.Title</p>
+}
+else
+{
+    <p><strong>Movie Title:</strong> Not available</p>
+}
+
+@if (Model.Show?.Salon != null)
+{
+    <p><strong>Salon:</strong> @Model.Show.Salon.SalonNr</p>
+}
+else
+{
+    <p><strong>Salon:</strong> Not available</p>
+}
+
+<p><strong>Date and Time:</strong> @Model.Show?.DateAndTime</p>

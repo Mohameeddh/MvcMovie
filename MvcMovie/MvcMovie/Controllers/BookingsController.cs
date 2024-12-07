@@ -62,6 +62,7 @@ namespace MvcMovie.Controllers
                                            .Where(seat => !bookedSeats.Contains(seat))
                                            .ToList();
             ViewData["AvailableSeats"] = new SelectList(availableSeats);
+            ViewData["Movies"] = new SelectList(_context.Movies, "Id", "Title");
 
             var booking = new Booking { ShowId = showId };
             return View(booking);
@@ -72,38 +73,41 @@ namespace MvcMovie.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Booking(Booking booking)
         {
-            // Kontrollera om det finns en Show som matchar den valda filmen (MovieId)
-            var existingShow = _context.Shows.FirstOrDefault(s => s.MovieId == booking.ShowId);
+            // Kontrollera om ShowId saknas och skapa en ny "Show" om det behövs
+            if (booking.ShowId == null || booking.ShowId == 0)
+            {
+                var newShow = CreateDefaultShow((int)booking.MovieId); // Skicka valt MovieId
+                _context.Shows.Add(newShow);
+                await _context.SaveChangesAsync();
 
-            if (existingShow != null)
-            {
-                // Använd befintligt ShowId
-                booking.ShowId = existingShow.Id;
-            }
-            else
-            {
-                // Om ingen matchande Show hittas, ge ett felmeddelande
-                ModelState.AddModelError("ShowId", "No matching show found for the selected movie.");
-                return View(booking);
+                booking.ShowId = newShow.Id;
             }
 
-            // Kontrollera om platsen redan är bokad för denna ShowId
+            // Kontrollera om stolen redan är bokad
             if (_context.Bookings.Any(b => b.ShowId == booking.ShowId && b.SeatNr == booking.SeatNr))
             {
                 ModelState.AddModelError("SeatNr", "This seat is already booked.");
                 return View(booking);
             }
 
-            // Generera bokningsnummer
+            // Generera bokningsnummer och spara bokningen
             booking.BookingNr = GenerateBookingNumber();
-
-            // Lägg till bokning i databasen
-            _context.Add(booking);
+            _context.Bookings.Add(booking);
             await _context.SaveChangesAsync();
 
-            // Skicka användaren till bekräftelsesidan
             return RedirectToAction("Confirmation", new { bookingNr = booking.BookingNr });
         }
+
+        private Show CreateDefaultShow(int movieId)
+        {
+            return new Show
+            {
+                MovieId = movieId, // Använd valt MovieId
+                SalonId = (int)(_context.Salons.FirstOrDefault()?.Id), // Standardsalong (om sådan finns)
+                DateAndTime = DateTime.Now
+            };
+        }
+
 
         private string GenerateBookingNumber()
         {

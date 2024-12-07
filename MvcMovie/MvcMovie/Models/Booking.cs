@@ -28,6 +28,9 @@ namespace MvcMovie.Models
         public int? ShowId { get; set; }
         public Show? Show { get; set; }
         public ICollection<Salon> Salons { get; set; } = new List<Salon>();
-        //public Movie? Movies { get; set; }
+
+        [Required]
+        public int? MovieId { get; set; }
+        public Movie? Movies { get; set; }
     }
 }
